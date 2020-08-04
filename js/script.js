@@ -1,3 +1,4 @@
+// Generate computer move
 let randomNumber = Math.floor(Math.random() * 3 + 1);
 
 console.log('Wylosowana liczba to: ' + randomNumber);
@@ -14,6 +15,7 @@ if(randomNumber == 1){
 
 printMessage('Mój ruch to: ' + computerMove);
 
+// Choose player move
 let playerInput = prompt('Wybierz swój ruch! 1: kamień, 2: papier, 3: nożyce.');
 
 console.log('Gracz wpisał: ' + playerInput);
@@ -30,12 +32,15 @@ if (playerInput == '1'){
 
 printMessage('Twój ruch to: ' + playerMove);
 
+//Show who win
 if (computerMove == 'kamień' && playerMove == 'papier'){
     printMessage('Ty wygrywasz!');
   } else if (computerMove == 'papier' && playerMove == 'nożyce') {
     printMessage('Ty wygrywasz!');
   } else if (computerMove == 'nożyce' && playerMove == 'kamień') {
     printMessage('Ty wygrywasz!');
+  } else if (playerMove == 'nieznany ruch') {
+    printMessage('Dałeś mi wygrać! Następnym razem wybierz 1, 2 lub 3.');
   } else {
-      printMessage ('Przegranko :(')
+    printMessage ('Przegranko :(')
   }
