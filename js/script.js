@@ -1,17 +1,7 @@
-{   function playGame(playerInput){
+{   const playGame = function(playerInput){
         clearMessages();
-
-        //Indicate player move
-        const playerMove = getMoveName(playerInput);
-
-        // Generate computer move
-        const computerMove = getMoveName(Math.floor(Math.random() * 3 + 1));
-        console.log('Ruch komputera to: ' + computerMove);
-
-        //Show who win
-        displayResult(computerMove, playerMove);
-
-        function getMoveName(argMoveId){
+        
+        const getMoveName = function(argMoveId){
             if(argMoveId == 1){
                 return 'kamień';
             } else if (argMoveId == 2) {
@@ -24,7 +14,15 @@
                 }
         }
         
-        function displayResult(argComputerMove, argPlayerMove){
+        //Indicate player move
+        const playerMove = getMoveName(playerInput);
+
+        // Generate computer move
+        const computerMove = getMoveName(Math.floor(Math.random() * 3 + 1));
+        console.log('Ruch komputera to: ' + computerMove);
+
+
+        const displayResult = function(argComputerMove, argPlayerMove){
             console.log('moves:', argComputerMove, argPlayerMove);
             printMessage('Zagrałem ' + argComputerMove + ', a Ty ' + argPlayerMove);
             
@@ -41,6 +39,9 @@
             }
             
         }
+
+        //Show who win
+        displayResult(computerMove, playerMove);
     }
 
     document.getElementById('play-rock').addEventListener('click', function(){playGame(1);});
